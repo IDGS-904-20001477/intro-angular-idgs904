@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { IAlumnos } from '../alumnosIr';
 
 @Component({
   selector: 'app-iric',
@@ -7,7 +8,11 @@ import { Component } from '@angular/core';
 })
 export class IricComponent {
 
-  alumnos:any[]=[
+  imageWidth:number=50;
+  imageMargin:number=2;
+  muestraImg:boolean=true;
+  listFilter:string='';
+  alumnos:IAlumnos[]=[
     {
       "matricula":1234,
       "nombre":"Mario",
@@ -33,5 +38,9 @@ export class IricComponent {
       'foto':'https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.mariowiki.com%2FDonkey_Kong&psig=AOvVaw155Ron6KGReUU7fu3huhpF&ust=1686797409661000&source=images&cd=vfe&ved=0CBEQjRxqFwoTCMDWqJTgwf8CFQAAAAAdAAAAABAE'
     }
   ]
+
+  showImage():void{
+    this.muestraImg=!this.muestraImg;
+  }
 
 }

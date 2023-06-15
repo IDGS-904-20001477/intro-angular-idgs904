@@ -5,20 +5,22 @@
     </div>
     <div class="card-body">
         <div class="row">
-            <div class="col-md-2"></div>
+            <div class="col-md-2">Filtrar por:</div>
             <div class="col-md-4">
-
+                <input [(ngModel)]="listFilter" class="form-control" name="filter" type="text">
             </div>
         </div>
         <div class="row">
             <div class="col-md6">
-                <h3>Filtro:</h3>
+                <h3>Filtro: {{listFilter}}</h3>
             </div>
         </div>
         <div class="table-responsive">
             <table class="table" *ngIf="alumnos.length">
                 <thead>
                     <tr>
+                        <th><button (click)="showImage()" class="btn btn-primary">{{muestraImg?'Ocultar ':'Mostrar '}}Imagen</button></th>
+                        <th>Foto</th>
                         <th>Matricula</th>
                         <th>Nombre</th>
                         <th>Edad</th>
@@ -26,6 +28,21 @@
                         <th>Pago</th>
                     </tr>
                 </thead>
+                <tbody>
+                    <tr *ngFor="let alumno of alumnos">
+                        <td><img *ngIf="muestraImg"
+                            class="object-fit-cover"
+                            [style.width.px]="imageWidth"
+                            [style.margin.px]="imageMargin"
+                            [title]="alumno.nombre"
+                            [src]="alumno.foto"></td>
+                        <td>{{alumno.matricula}}</td>
+                        <td>{{alumno.nombre}}</td>
+                        <td>{{alumno.edad}}</td>
+                        <td>{{alumno.correo}}</td>
+                        <td>{{alumno.pago}}</td>
+                    </tr>
+                </tbody>
             </table>
         </div>
     </div>
