@@ -7,18 +7,29 @@ import { escuelaComponent } from './escuela/escuela.component';
 import { IricComponent } from './escuela/iric/iric.component';
 import { MenuComponent } from './escuela/menu/menu.component';
 import { FormsModule } from '@angular/forms';
+import { SumarComponent } from './escuela/formularios/sumar/sumar.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { OperasBasComponent } from './escuela/formularios/operas-bas/operas-bas.component';
+import { MatInputModule } from '@angular/material/input';
+import { MatIconModule } from '@angular/material/icon';
+
 
 @NgModule({
   declarations: [
     AppComponent,
     escuelaComponent,
     IricComponent,
-    MenuComponent
+    MenuComponent,
+    SumarComponent,
+    OperasBasComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    BrowserAnimationsModule,
+    MatInputModule,
+    MatIconModule
   ],
   providers: [],
   bootstrap: [AppComponent]
