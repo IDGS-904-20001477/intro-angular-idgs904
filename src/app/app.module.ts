@@ -1,7 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
-import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { escuelaComponent } from './escuela/escuela.component';
 import { IricComponent } from './escuela/iric/iric.component';
@@ -9,9 +8,11 @@ import { MenuComponent } from './escuela/menu/menu.component';
 import { FormsModule } from '@angular/forms';
 import { SumarComponent } from './escuela/formularios/sumar/sumar.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { OperasBasComponent } from './escuela/formularios/operas-bas/operas-bas.component';
-import { MatInputModule } from '@angular/material/input';
-import { MatIconModule } from '@angular/material/icon';
+import { OperasModule } from './escuela/formularios/operas-bas/operas-bas.module';
+import { AlumnosFilterPipe } from './escuela/alumnos-filter.pipe';
+import { CalificacionAlumComponent } from './escuela/calificacion-alum/calificacion-alum.component';
+
+
 
 
 @NgModule({
@@ -21,15 +22,16 @@ import { MatIconModule } from '@angular/material/icon';
     IricComponent,
     MenuComponent,
     SumarComponent,
-    OperasBasComponent
+    AlumnosFilterPipe,
+    CalificacionAlumComponent    
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule,
     FormsModule,
     BrowserAnimationsModule,
-    MatInputModule,
-    MatIconModule
+    OperasModule
+
+    
   ],
   providers: [],
   bootstrap: [AppComponent]
